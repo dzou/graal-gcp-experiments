@@ -57,10 +57,9 @@
       <artifactId>spring-context-indexer</artifactId>
     </dependency>
 
-
     <dependency>
       <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-gcp-starter-secretmanager</artifactId>
+      <artifactId>spring-cloud-gcp-starter-pubsub</artifactId>
       <version>1.2.3.RELEASE</version>
     </dependency>
   </dependencies>
@@ -82,9 +81,17 @@
           <plugin>
             <groupId>org.graalvm.nativeimage</groupId>
             <artifactId>native-image-maven-plugin</artifactId>
-            <version>20.0.0</version>
+            <version>20.1.0</version>
             <configuration>
-              <buildArgs>-Dspring.graal.remove-unused-autoconfig=true --no-fallback -H:+ReportExceptionStackTraces --no-server</buildArgs>
+              <buildArgs>
+                -Dspring.graal.remove-unused-autoconfig=true
+                --no-fallback
+                --allow-incomplete-classpath
+                -H:+ReportExceptionStackTraces
+                -H:EnableURLProtocols=http
+                -H:ConfigurationFileDirectories=config-dir
+                --no-server
+              </buildArgs>
             </configuration>
             <executions>
               <execution>
