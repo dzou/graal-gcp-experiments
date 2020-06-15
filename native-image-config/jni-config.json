@@ -1,2 +1,22 @@
 [
+{
+  "name":"io.grpc.netty.shaded.io.netty.handler.ssl.ReferenceCountedOpenSslContext$AbstractCertificateVerifier",
+  "methods":[{"name":"verify","parameterTypes":["long","byte[][]","java.lang.String"] }]
+},
+{
+  "name":"java.lang.ClassLoader",
+  "methods":[
+    {"name":"getPlatformClassLoader","parameterTypes":[] }, 
+    {"name":"loadClass","parameterTypes":["java.lang.String"] }
+  ]
+},
+{
+  "name":"java.lang.ClassNotFoundException"
+},
+{
+  "name":"java.lang.NoSuchMethodError"
+},
+{
+  "name":"java.lang.String[]"
+}
 ]

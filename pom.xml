@@ -17,7 +17,7 @@
   <version>1.0-SNAPSHOT</version>
 
   <properties>
-    <java.version>1.8</java.version>
+    <java.version>11</java.version>
     <start-class>com.example.RestServiceApplication</start-class>
   </properties>
 
@@ -48,8 +48,8 @@
 
     <dependency>
       <groupId>org.springframework.experimental</groupId>
-      <artifactId>spring-graal-native</artifactId>
-      <version>0.6.1.RELEASE</version>
+      <artifactId>spring-graalvm-native</artifactId>
+      <version>0.7.0</version>
     </dependency>
 
     <dependency>
@@ -115,8 +115,10 @@
                 -H:+ReportExceptionStackTraces
                 -H:EnableURLProtocols=http
                 -H:ConfigurationFileDirectories=/home/dzou/IdeaProjects/graal-gcp-experiment/native-image-config
+                -H:+TraceClassInitialization
+                --rerun-class-initialization-at-runtime=io.grpc.netty.shaded.io.netty.handler.codec.http2.Http2CodecUtil
                 --initialize-at-build-time
-                --initialize-at-run-time=io.netty.handler.ssl.util.BouncyCastleSelfSignedCertGenerator,io.netty.handler.ssl.ReferenceCountedOpenSslClientContext,io.netty.handler.ssl.ReferenceCountedOpenSslServerContext,io.netty.handler.ssl.JdkNpnApplicationProtocolNegotiator,io.netty.handler.ssl.JdkAlpnApplicationProtocolNegotiator,io.netty.handler.ssl.util.ThreadLocalInsecureRandom,io.netty.handler.ssl.JettyNpnSslEngine,io.netty.handler.ssl.ReferenceCountedOpenSslEngine,io.netty.handler.ssl.ConscryptAlpnSslEngine,io.netty.handler.ssl.JettyAlpnSslEngine$ClientEngine,io.netty.handler.ssl.JettyAlpnSslEngine$ServerEngine,io.netty.util.internal.ObjectCleaner,io.netty.handler.ssl.util.InsecureTrustManagerFactory
+                --initialize-at-run-time=io.grpc.netty.shaded.io.netty.handler.ssl.OpenSsl,io.grpc.netty.shaded.io.netty.internal.tcnative.CertificateVerifier,io.grpc.netty.shaded.io.netty.internal.tcnative.SSL,io.grpc.netty.shaded.io.netty.handler.ssl.ReferenceCountedOpenSslEngine,io.grpc.netty.shaded.io.netty.handler.ssl.JettyAlpnSslEngine$ServerEngine,io.grpc.netty.shaded.io.netty.handler.codec.http2.DefaultHttp2FrameWriter
               </buildArgs>
             </configuration>
             <executions>
