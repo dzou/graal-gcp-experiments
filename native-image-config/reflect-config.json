@@ -14,5 +14,17 @@
   "methods": [
     { "name": "<init>", "parameterTypes": [] }
   ]
+},
+{
+  "name": "io.grpc.netty.shaded.io.netty.channel.epoll.EpollServerSocketChannel",
+  "methods": [
+    { "name": "<init>", "parameterTypes": [] }
+  ]
+},
+{
+  "name" : "io.grpc.netty.shaded.io.netty.util.internal.NativeLibraryUtil",
+  "methods": [
+    { "name": "loadLibrary", "parameterTypes": ["java.lang.String", "boolean"] }
+  ]
 }
 ]

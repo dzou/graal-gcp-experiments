@@ -93,8 +93,6 @@
                 -H:EnableURLProtocols=http
                 -H:ConfigurationFileDirectories=/home/dzou/IdeaProjects/graal-gcp-experiment/native-image-config
                 -H:+TraceClassInitialization
-                --initialize-at-run-time=com.example.Driver,io.grpc.netty.shaded.io.netty.handler.ssl.OpenSsl,io.grpc.netty.shaded.io.netty.internal.tcnative.SSL
-                -Dspring.native.verbose=true
               </buildArgs>
             </configuration>
             <executions>

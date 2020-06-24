@@ -12,6 +12,9 @@ import io.grpc.ManagedChannelBuilder;
 import io.grpc.auth.MoreCallCredentials;
 import io.grpc.stub.StreamObserver;
 import java.io.IOException;
+import java.util.logging.Handler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Driver {
 
@@ -20,6 +23,12 @@ public class Driver {
   static PublisherStub publisherStub;
 
   public static void main(String[] args) throws IOException, InterruptedException {
+    Logger root = Logger.getLogger("");
+    root.setLevel(Level.FINE);
+    for (Handler handler : root.getHandlers()) {
+      handler.setLevel(Level.FINE);
+    }
+
     System.out.println("Hello world.");
 
     channel = ManagedChannelBuilder.forTarget("dns:///pubsub.googleapis.com:443").build();
