@@ -5,7 +5,8 @@ In this sample we'll try to build a GraalVM native image of a Spring Boot applic
 ## Run Locally
 
 ```
-mvn spring-boot:run
+mvn package
+java -jar target/graal-gcp-experiment-1.0-SNAPSHOT.jar 
 ```
 
 ## Build and run GraalVM Image
@@ -19,7 +20,7 @@ mvn package -Pgraal
 Run it:
 
 ```
-./target/com.example.restserviceapplication 
+./target/com.example.driver
 ```
 
 Right now it still doesn't work, you should get the following error:
