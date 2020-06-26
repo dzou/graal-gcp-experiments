@@ -118,11 +118,103 @@
   "allDeclaredConstructors":true
 },
 {
+  "name": "io.grpc.netty.shaded.io.netty.internal.tcnative.NativeStaticallyReferencedJniMethods",
+  "allDeclaredFields":true,
+  "allDeclaredMethods":true,
+  "allDeclaredConstructors":true
+},
+{
+  "name": "io.grpc.netty.shaded.io.netty.internal.tcnative.Library",
+  "allDeclaredMethods":true,
+  "allDeclaredConstructors":true
+},
+{
+  "name": "io.grpc.netty.shaded.io.netty.internal.tcnative.Buffer",
+  "allDeclaredMethods":true,
+  "allDeclaredConstructors":true
+},
+{
+  "name": "io.grpc.netty.shaded.io.netty.internal.tcnative.SSL",
+  "allDeclaredMethods":true,
+  "allDeclaredConstructors":true
+},
+  {
+    "name": "io.grpc.netty.shaded.io.netty.internal.tcnative.SSLContext",
+    "allDeclaredMethods":true,
+    "allDeclaredConstructors":true
+  },
+  {
+    "name": "io.grpc.netty.shaded.io.netty.internal.tcnative.SSLTask",
+    "allDeclaredFields":true,
+    "allDeclaredMethods":true,
+    "allDeclaredConstructors":true
+  },
+  {
+    "name": "io.grpc.netty.shaded.io.netty.internal.tcnative.CertificateCallbackTask",
+    "allDeclaredFields":true,
+    "allDeclaredMethods":true,
+    "allDeclaredConstructors":true
+  },
+  {
+    "name": "io.grpc.netty.shaded.io.netty.internal.tcnative.CertificateVerifierTask",
+    "allDeclaredFields":true,
+    "allDeclaredMethods":true,
+    "allDeclaredConstructors":true
+  },
+
+  {
+    "name": "io.grpc.netty.shaded.io.netty.internal.tcnative.CertificateVerifier",
+    "allDeclaredFields":true,
+    "allDeclaredMethods":true,
+    "allDeclaredConstructors":true
+  },
+  {
+    "name": "io.grpc.netty.shaded.io.netty.internal.tcnative.SSLPrivateKeyMethodTask",
+    "allDeclaredFields":true,
+    "allDeclaredMethods":true,
+    "allDeclaredConstructors":true
+  },
+  {
+    "name": "io.grpc.netty.shaded.io.netty.internal.tcnative.SSLPrivateKeyMethodSignTask",
+    "allDeclaredFields":true,
+    "allDeclaredMethods":true,
+    "allDeclaredConstructors":true
+  },
+
+  {
+    "name": "io.grpc.netty.shaded.io.netty.internal.tcnative.SSLPrivateKeyMethod",
+    "allDeclaredFields":true,
+    "allDeclaredMethods":true,
+    "allDeclaredConstructors":true
+  },
+  {
+    "name": "io.grpc.netty.shaded.io.netty.internal.tcnative.SSLPrivateKeyMethodDecryptTask",
+    "allDeclaredFields":true,
+    "allDeclaredMethods":true,
+    "allDeclaredConstructors":true
+  },
+
+  {
+    "name": "io.grpc.netty.shaded.io.netty.internal.tcnative.SSLSession"
+  },
+{
   "name":"java.lang.ClassLoader",
   "methods":[
     {"name":"getPlatformClassLoader","parameterTypes":[] }, 
     {"name":"loadClass","parameterTypes":["java.lang.String"] }
   ]
+},
+{
+  "name":"java.lang.Exception"
+},
+{
+  "name":"java.lang.NullPointerException"
+},
+{
+  "name":"java.lang.IllegalArgumentException"
+},
+{
+  "name":"java.lang.OutOfMemoryError"
 },
 {
   "name":"java.lang.ClassNotFoundException"
@@ -132,5 +224,13 @@
 },
 {
   "name":"java.lang.String[]"
-}
+},
+  {
+    "name":"java.lang.String",
+    "methods": [
+      { "name": "<init>", "parameterTypes": [] },
+      { "name": "<init>", "parameterTypes": ["byte[]"] },
+      { "name": "getBytes", "parameterTypes": [] }
+    ]
+  }
 ]

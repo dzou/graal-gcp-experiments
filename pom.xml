@@ -90,7 +90,7 @@
                 --no-server
                 -H:+AllowIncompleteClasspath
                 -H:+ReportExceptionStackTraces
-                -H:EnableURLProtocols=http
+                -H:EnableURLProtocols=http,https
                 -H:ConfigurationFileDirectories=/home/dzou/IdeaProjects/graal-gcp-experiment/native-image-config
                 -H:+TraceClassInitialization
               </buildArgs>

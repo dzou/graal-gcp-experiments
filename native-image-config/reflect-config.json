@@ -413,6 +413,21 @@
   ]
 },
 {
+  "name":"io.grpc.netty.shaded.io.grpc.netty.AbstractNettyHandler",
+  "methods":[
+    {"name":"channelActive","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] },
+    {"name":"exceptionCaught","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.lang.Throwable"] }
+  ]
+},
+{
+  "name":"io.grpc.netty.shaded.io.grpc.netty.NettyClientHandler",
+  "methods":[
+    {"name":"channelInactive","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] },
+    {"name":"close","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","io.grpc.netty.shaded.io.netty.channel.ChannelPromise"] },
+    {"name":"write","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.lang.Object","io.grpc.netty.shaded.io.netty.channel.ChannelPromise"] }
+  ]
+},
+{
   "name":"io.grpc.netty.shaded.io.netty.channel.ChannelInboundHandlerAdapter",
   "methods":[
     {"name":"channelActive","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] },
@@ -495,5 +510,145 @@
     {"name":"read","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext"] },
     {"name":"write","parameterTypes":["io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext","java.lang.Object","io.grpc.netty.shaded.io.netty.channel.ChannelPromise"] }
   ]
+},
+{
+  "name":"sun.security.provider.X509Factory",
+  "allDeclaredConstructors" : true,
+  "allDeclaredMethods" : true
+},
+{
+  "name":"sun.security.x509.KeyUsageExtension",
+  "allDeclaredConstructors" : true,
+  "allDeclaredMethods" : true
+},
+{
+  "name":"sun.security.x509.ExtendedKeyUsageExtension",
+  "allDeclaredConstructors" : true,
+  "allDeclaredMethods" : true
+},
+{
+  "name":"sun.security.x509.BasicConstraintsExtension",
+  "allDeclaredConstructors" : true,
+  "allDeclaredMethods" : true
+},
+{
+  "name":"sun.security.x509.SubjectKeyIdentifierExtension",
+  "allDeclaredConstructors" : true,
+  "allDeclaredMethods" : true
+},
+{
+  "name":"sun.security.x509.AuthorityKeyIdentifierExtension",
+  "allDeclaredConstructors" : true,
+  "allDeclaredMethods" : true
+},
+{
+  "name":"sun.security.x509.AuthorityInfoAccessExtension",
+  "allDeclaredConstructors" : true,
+  "allDeclaredMethods" : true
+},
+{
+  "name":"sun.security.x509.CertificateIssuerExtension",
+  "allDeclaredConstructors" : true,
+  "allDeclaredMethods" : true
+},
+{
+  "name":"sun.security.x509.CertificatePoliciesExtension",
+  "allDeclaredConstructors" : true,
+  "allDeclaredMethods" : true
+},
+{
+  "name":"sun.security.x509.CRLDistributionPointsExtension",
+  "allDeclaredConstructors" : true,
+  "allDeclaredMethods" : true
+},
+{
+  "name":"sun.security.x509.CRLNumberExtension",
+  "allDeclaredConstructors" : true,
+  "allDeclaredMethods" : true
+},
+{
+  "name":"sun.security.x509.CRLReasonCodeExtension",
+  "allDeclaredConstructors" : true,
+  "allDeclaredMethods" : true
+},
+{
+  "name":"sun.security.x509.DeltaCRLIndicatorExtension",
+  "allDeclaredConstructors" : true,
+  "allDeclaredMethods" : true
+},
+{
+  "name":"sun.security.x509.InhibitAnyPolicyExtension",
+  "allDeclaredConstructors" : true,
+  "allDeclaredMethods" : true
+},
+{
+  "name":"sun.security.x509.InvalidityDateExtension",
+  "allDeclaredConstructors" : true,
+  "allDeclaredMethods" : true
+},
+{
+  "name":"sun.security.x509.IssuerAlternativeNameExtension",
+  "allDeclaredConstructors" : true,
+  "allDeclaredMethods" : true
+},
+{
+  "name":"sun.security.x509.IssuingDistributionPointExtension",
+  "allDeclaredConstructors" : true,
+  "allDeclaredMethods" : true
+},
+{
+  "name":"sun.security.x509.NameConstraintsExtension",
+  "allDeclaredConstructors" : true,
+  "allDeclaredMethods" : true
+},
+{
+  "name":"sun.security.x509.NetscapeCertTypeExtension",
+  "allDeclaredConstructors" : true,
+  "allDeclaredMethods" : true
+},
+{
+  "name":"sun.security.x509.OCSPNoCheckExtension",
+  "allDeclaredConstructors" : true,
+  "allDeclaredMethods" : true
+},
+{
+  "name":"sun.security.x509.PolicyConstraintsExtension",
+  "allDeclaredConstructors" : true,
+  "allDeclaredMethods" : true
+},
+{
+  "name":"sun.security.x509.PolicyMappingsExtension",
+  "allDeclaredConstructors" : true,
+  "allDeclaredMethods" : true
+},
+{
+  "name":"sun.security.x509.PrivateKeyUsageExtension",
+  "allDeclaredConstructors" : true,
+  "allDeclaredMethods" : true
+},
+{
+  "name":"sun.security.x509.SubjectAlternativeNameExtension",
+  "allDeclaredConstructors" : true,
+  "allDeclaredMethods" : true
+},
+{
+  "name":"sun.security.x509.SubjectInfoAccessExtension",
+  "allDeclaredConstructors" : true,
+  "allDeclaredMethods" : true
+},
+{
+  "name":"sun.security.x509.UnparseableExtension",
+  "allDeclaredConstructors" : true,
+  "allDeclaredMethods" : true
+},
+{
+  "name":"sun.security.provider.certpath.PKIXCertPathValidator",
+  "allDeclaredConstructors" : true,
+  "allDeclaredMethods" : true
+},
+{
+  "name":"sun.security.provider.certpath.PKIXMasterCertPathValidator",
+  "allDeclaredConstructors" : true,
+  "allDeclaredMethods" : true
 }
 ]
