@@ -23,12 +23,6 @@ public class Driver {
   static PublisherStub publisherStub;
 
   public static void main(String[] args) throws IOException, InterruptedException {
-    Logger root = Logger.getLogger("");
-    root.setLevel(Level.FINE);
-    for (Handler handler : root.getHandlers()) {
-      handler.setLevel(Level.FINE);
-    }
-
     System.out.println("Hello world.");
 
     channel = ManagedChannelBuilder.forTarget("dns:///pubsub.googleapis.com:443").build();
@@ -40,7 +34,7 @@ public class Driver {
         PublishRequest.newBuilder()
             .setTopic("projects/my-kubernetes-codelab-217414/topics/exampleTopic")
             .addMessages(
-                PubsubMessage.newBuilder().setData(ByteString.copyFromUtf8("main Methddddod")).build())
+                PubsubMessage.newBuilder().setData(ByteString.copyFromUtf8("This was published from the native image.")).build())
             .build();
 
     publisherStub.publish(publishRequest, new UnaryStreamObserver());

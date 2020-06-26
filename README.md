@@ -11,23 +11,52 @@ java -jar target/graal-gcp-experiment-1.0-SNAPSHOT.jar
 
 ## Build and run GraalVM Image
 
-Build the image:
+Instructions for building the image. This requires some minor patches to netty to work.
 
-```
-mvn package -Pgraal
-```
+0. In a new terminal, create a new directory to hold the repos that you will clone.
 
-Run it:
+    ```
+    $ mkdir tmp
+    $ cd tmp/
+    ```
 
-```
-./target/com.example.driver
-```
+1. In a new terminal, run the commands to install the patched version of netty:
 
-Right now it still doesn't work, you should get the following error:
+    ```
+    $ git clone https://github.com/dzou/netty.git
+    $ cd netty
+    $ ./mvnw clean install -DskipTests
+    ```
 
-```
-java.lang.UnsatisfiedLinkError: io.grpc.netty.shaded.io.netty.internal.tcnative.NativeStaticallyReferencedJniMethods.sslOpCipherServerPreference()I [symbol: Java_io_grpc_netty_shaded_io_netty_internal_tcnative_NativeStaticallyReferencedJniMethods_sslOpCipherServerPreference or Java_io_grpc_netty_shaded_io_netty_internal_tcnative_NativeStaticallyReferencedJniMethods_sslOpCipherServerPreference__]
-	at com.oracle.svm.jni.access.JNINativeLinkage.getOrFindEntryPoint(JNINativeLinkage.java:145) ~[na:na]
-	at com.oracle.svm.jni.JNIGeneratedMethodSupport.nativeCallAddress(JNIGeneratedMethodSupport.java:57) ~[na:na]
-	at io.grpc.netty.shaded.io.netty.internal.tcnative.NativeStaticallyReferencedJniMethods.sslOpCipherServerPreference(NativeStaticallyReferencedJniMethods.java) ~[na:na]
-```
+2. Then we will rebuild `grpc-netty-shaded`.
+
+    ```
+    $ git clone https://github.com/dzou/grpc-java
+    $ cd grpc-java
+    $ ./gradlew :grpc-auth:publishMavenPublicationToMavenLocal -PskipCodegen=true -PskipAndroid=true
+    $ ./gradlew :grpc-netty-shaded:publishMavenPublicationToMavenLocal -PskipCodegen=true -PskipAndroid=true
+    ```
+
+3. Then clone this project.
+
+    ```
+    $ git clone https://github.com/dzou/graal-gcp-experiments.git
+    $ cd graal-gcp-experiments
+    ```
+
+4. Edit `com.example.Driver` and modify the `setTopic(...)` call in main() to a Pub/Sub topic for your own project.
+
+    ```
+        PublishRequest publishRequest =
+            PublishRequest.newBuilder()
+                .setTopic("projects/my-kubernetes-codelab-217414/topics/exampleTopic")
+                .addMessages(
+                    PubsubMessage.newBuilder().setData(ByteString.copyFromUtf8("This was published from the native image.")).build())
+                .build();
+    ```
+    
+5. Run `mvn package -Pgraal` to build the image.
+
+6. Run `./target/com.example.driver` to run the image.
+
+7. Check the [Cloud Console Pub/Sub UI](https://console.cloud.google.com/cloudpubsub/topic/list) to see the newly sent message.
