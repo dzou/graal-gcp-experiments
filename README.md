@@ -26,6 +26,7 @@ Instructions for building the image. This requires some minor patches to netty t
     $ git clone https://github.com/dzou/netty.git
     $ cd netty
     $ ./mvnw clean install -DskipTests
+    $ cd ..
     ```
 
 2. Then we will rebuild `grpc-netty-shaded`.
@@ -33,8 +34,8 @@ Instructions for building the image. This requires some minor patches to netty t
     ```
     $ git clone https://github.com/dzou/grpc-java
     $ cd grpc-java
-    $ ./gradlew :grpc-auth:publishMavenPublicationToMavenLocal -PskipCodegen=true -PskipAndroid=true
-    $ ./gradlew :grpc-netty-shaded:publishMavenPublicationToMavenLocal -PskipCodegen=true -PskipAndroid=true
+    $ ./gradlew publishMavenPublicationToMavenLocal -PskipCodegen=true -PskipAndroid=true
+    $ cd ..
     ```
 
 3. Then clone this project.
