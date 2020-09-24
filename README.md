@@ -1,3 +1,3 @@
-# Compatability Testing GraalVM Images with GCP Libraries
+:warning: These set of experiments are obsolete. :warning:
 
-Official support for building Java Google Cloud Client Libraries for GraalVM native image compilation can be found here: https://github.com/GoogleCloudPlatform/google-cloud-graalvm-support
+The official repository containing GraalVM native image compilation support for Google Client Libraries can be found here: https://github.com/GoogleCloudPlatform/google-cloud-graalvm-support
